@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600;1,9..144,700&family=Noto+Sans+Tamil:wght@400;600;700&family=Geist+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --background: #0e0e0d;
+  --foreground: #f5f2ea;
+  --card: #161513;
+  --card-hover: #1f1d1a;
+  --card-foreground: #f5f2ea;
+  --popover: #1a1815;
+  --secondary: #201e1b;
+  --muted: #201e1b;
+  --muted-foreground: #b8afa4;
+  --accent: #2a2723;
+  --border: #2e2a26;
+  --input: #2e2a26;
+  --ring: #e8a13a;
+  --brand: #e8a13a;
+  --tg-blue: #229ED9;
+  --tg-blue-hover: #1e88e5;
+  --radius: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Urbanist', 'Noto Sans Tamil', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0e0e0d;
+}
+::-webkit-scrollbar-thumb {
+  background: #2e2a26;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3e3a35;
+}
+
+/* Hide scrollbar for carousel rows */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* PhonoFilm Signature Typography */
+.phonofilm-logo {
+  font-family: 'Fraunces', Georgia, serif;
+}
+.font-mono-tag {
+  font-family: 'Geist Mono', monospace;
+}
+
+/* PhonoFilm Ticket Mask Cutout & Aspect Ratio */
+.poster-mask {
+  aspect-ratio: 210 / 308;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  background-color: #161513;
+}
+.poster-mask img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+@supports (mask-image: url("data:image/svg+xml;utf8,<svg></svg>")) or (-webkit-mask-image: url("data:image/svg+xml;utf8,<svg></svg>")) {
+  .poster-mask {
+    -webkit-mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 210 308'%3E%3Cpath fill='black' d='M15.8291 0.5H194.171C202.637 0.5 209.5 7.36318 209.5 15.8291V275.365C209.5 278.771 208.365 282.08 206.275 284.77L199.458 293.545L199.452 293.552L193.612 301.355C190.718 305.223 186.17 307.5 181.34 307.5H15.8291C7.36318 307.5 0.5 300.637 0.5 292.171V15.8291C0.5 7.36318 7.36318 0.5 15.8291 0.5Z'/%3E%3C/svg%3E");
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 210 308'%3E%3Cpath fill='black' d='M15.8291 0.5H194.171C202.637 0.5 209.5 7.36318 209.5 15.8291V275.365C209.5 278.771 208.365 282.08 206.275 284.77L199.458 293.545L199.452 293.552L193.612 301.355C190.718 305.223 186.17 307.5 181.34 307.5H15.8291C7.36318 307.5 0.5 300.637 0.5 292.171V15.8291C0.5 7.36318 7.36318 0.5 15.8291 0.5Z'/%3E%3C/svg%3E");
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+  }
+}
+
+/* PhonoFilm Pill Buttons */
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  background: #161513;
+  padding: 0.45rem 0.95rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--foreground);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.pill-btn:hover {
+  background: #201e1b;
+  border-color: rgba(245, 242, 234, 0.25);
+  color: #ffffff;
+}
+.pill-btn:active {
+  transform: scale(0.97);
+}
+
+.pill-btn-active {
+  background: var(--foreground) !important;
+  color: #0e0e0d !important;
+  border-color: var(--foreground) !important;
+  box-shadow: 0 2px 12px rgba(245, 242, 234, 0.2);
+}
+
+/* Phono Card Styling */
+.phono-card {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+.phono-card:hover {
+  transform: translateY(-4px);
+}
+.phono-card .poster-img {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.phono-card:hover .poster-img {
+  transform: scale(1.05);
+}
+
+/* Telegram Button */
+.btn-telegram {
+  background: linear-gradient(135deg, #229ED9 0%, #1789c6 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(34, 158, 217, 0.3);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-telegram:hover {
+  background: linear-gradient(135deg, #27a8e2 0%, #1e88e5 100%);
+  box-shadow: 0 6px 20px rgba(34, 158, 217, 0.45);
+  transform: translateY(-1px);
+}
+
+/* Carousel Scroll Buttons */
+.carousel-nav-btn {
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+.carousel-container:hover .carousel-nav-btn {
+  opacity: 1;
+}
+.carousel-nav-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Reviews Star Rating */
+.star-rating-btn {
+  color: #4b4b45;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+.star-rating-btn.active,
+.star-rating-btn:hover,
+.star-rating-btn:hover ~ .star-rating-btn {
+  color: var(--brand);
+}
+
+/* Hero Carousel Slide */
+.hero-slide {
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Lightbox Modal */
+#screenshot-lightbox:not(.hidden) {
+  animation: fadeIn 0.2s ease forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* View transition */
+.view-section {
+  animation: viewFadeIn 0.25s ease forwards;
+}
+@keyframes viewFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Search Autocomplete Dropdown */
+.search-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 0.5rem;
+  background: #161513;
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 40px -15px rgba(0,0,0,0.85);
+  z-index: 100;
+  max-height: 420px;
+  overflow-y: auto;
+}
+.search-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.875rem;
+  border-radius: 0.75rem;
+  transition: background 0.15s ease;
+  cursor: pointer;
+}
+.search-dropdown-item:hover {
+  background: #201e1b;
+}
+
+/* Mobile responsive bottom navigation */
+.mobile-bottom-bar {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(14, 14, 13, 0.94);
+  border-top: 1px solid rgba(46, 42, 38, 0.8);
+}

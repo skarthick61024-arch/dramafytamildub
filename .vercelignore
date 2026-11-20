@@ -1,0 +1,15 @@
+# Prevent large unnecessary files from uploading to Vercel (Ultra-light deploy)
+*.apk
+scratch/
+scripts/
+phonofilm_*
+*.py
+*.log
+.git/
+.gitignore
+server.py
+server.js
+db/
+data/
+*.md
+images/dramafy_logo_preview.png

@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Large APK / App files
+*.apk
+
+# Scraping & Raw Cache
+scratch/
+scripts/
+phonofilm_*
+
+# Environment & IDE
+.env
+.env.local
+.vscode/
+.idea/
+*.log
+
+# Server/Dev scripts
+server.py
+server.js
